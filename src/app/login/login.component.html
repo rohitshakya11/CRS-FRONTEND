@@ -1,0 +1,39 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h2>Login</h2>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="userEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="userEmail"  [(ngModel)]="user.emailId">
+                            </div>
+                            <div class="mb-3">
+                                <label for="paasword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password"  [(ngModel)]="user.password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="role" class="form-label">Role</label>
+                                <select class="form-select" aria-label="Default select example"  [(ngModel)]="user.role">
+                                    <option selected value="student">Student</option>
+                                    <option value="professor">Professor</option>
+                                    <option value="admin">Admin</option>
+                                  </select>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

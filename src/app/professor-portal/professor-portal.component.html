@@ -1,0 +1,72 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h2>Your Profile</h2>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="userEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="userEmail"  [(ngModel)]="professor.emailId">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="text" class="form-control" id="password"  [(ngModel)]="professor.password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="role" class="form-label">Role</label>
+                                <input type="text" class="form-control" id="role"  [(ngModel)]="professor.role">
+                            </div>
+                            <div class="mb-3 text-center">
+                                <button type="submit" class="btn btn-primary" (click)="update()">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Courses Assigned</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Professor</th>
+                        <th scope="col">Fee</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let course of courses">
+                    <tr>
+                        <th scope="row">
+                            <a routerLink="/enrolled-students/{{professor.id}}/{{course.id}}">
+                                {{course.id}}
+                            </a>
+                        </th>
+                        <td>{{course.courseName}}</td>
+                        <td>{{course.professorId}}</td>
+                        <td>{{course.courseFee}}</td>
+                        <td>{{course.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

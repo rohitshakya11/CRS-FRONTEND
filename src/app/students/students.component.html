@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Student List</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">IsApprovedByAdmin</th>
+                        <th scope="col">IsCourseApprovedByAdmin</th>
+                        <th scope="col">IsReportCardGenerated</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let student of students">
+                    <tr>
+                        <th scope="row">
+                            <a routerLink="/student-detail/{{student.emailId}}">
+                                {{student.id}}
+                            </a>
+                        </th>
+                        <td>{{student.name}}</td>
+                        <td>{{student.emailId}}</td>
+                        <td>{{student.approvedByAdmin}}</td>
+                        <td>{{student.coursesApprovedByAdmin}}</td>
+                        <td>{{student.reportCardGenerated}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

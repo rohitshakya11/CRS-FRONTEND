@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h2>Register Course</h2>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label for="courseId" class="form-label">Course ID</label>
+                            <input type="number" class="form-control" id="courseId"
+                                [(ngModel)]="course.id">
+                        </div>
+                        <div class="col-9">
+                            <label for="courseName" class="form-label">Course Name</label>
+                            <input type="text" class="form-control" id="courseName"
+                                [(ngModel)]="course.courseName">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label for="professorId" class="form-label">Professor ID</label>
+                            <input type="number" class="form-control" id="professorId"
+                                [(ngModel)]="course.professorId">
+                        </div>
+                        <div class="col-9">
+                            <label for="courseFee" class="form-label">Course Fee</label>
+                            <input type="number" class="form-control" id="courseFee"
+                                [(ngModel)]="course.courseFee">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label for="semesterId" class="form-label">Semester ID</label>
+                            <input type="number" class="form-control" id="semesterId"
+                                [(ngModel)]="course.semesterId">
+                        </div>
+                        <div class="col-9">
+                            <label for="department" class="form-label">Department</label>
+                            <input type="text" class="form-control" id="department"
+                                [(ngModel)]="course.department">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="form-check">
+                                <label class="form-check-label" for="isPrimary">Is Primary</label>
+                                <input type="checkbox" class="form-check-input" id="isPrimary"
+                                    [(ngModel)]="isCoursePrimary">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-4">
+                            <input type="button" class="btn btn-primary btn-block" value="Register" (click)="register()">
+                        </div>
+                        <!-- <div class="col-4">
+                            <input type="button" class="btn btn-success btn-block" value="Update" (click)="update()">
+                        </div> -->
+                        <div class="col-4">
+                            <input type="button" class="btn btn-danger btn-block" value="Deregister" (click)="deRegister()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

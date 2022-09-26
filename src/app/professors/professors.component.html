@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Professor List</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let professor of professors">
+                    <tr>
+                        <th scope="row">{{professor.id}}</th>
+                        <td>{{professor.name}}</td>
+                        <td>{{professor.emailId}}</td>
+                        <td>{{professor.role}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,110 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h2>Course Details</h2>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label for="courseId" class="form-label">Course ID</label>
+                            <input type="number" class="form-control" id="courseId"
+                                [(ngModel)]="course.id">
+                        </div>
+                        <div class="col-9">
+                            <label for="courseName" class="form-label">Course Name</label>
+                            <input type="text" class="form-control" id="courseName"
+                                [(ngModel)]="course.courseName">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label for="professorId" class="form-label">Professor ID</label>
+                            <input type="number" class="form-control" id="professorId"
+                                [(ngModel)]="course.professorId">
+                        </div>
+                        <div class="col-9">
+                            <label for="courseFee" class="form-label">Course Fee</label>
+                            <input type="number" class="form-control" id="courseFee"
+                                [(ngModel)]="course.courseFee">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label for="semesterId" class="form-label">Semester ID</label>
+                            <input type="number" class="form-control" id="semesterId"
+                                [(ngModel)]="course.semesterId">
+                        </div>
+                        <div class="col-9">
+                            <label for="department" class="form-label">Department</label>
+                            <input type="text" class="form-control" id="department"
+                                [(ngModel)]="course.department">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="form-check">
+                                <label class="form-check-label" for="status">Set status</label>
+                                <input type="checkbox" class="form-check-input" id="status"
+                                    [(ngModel)]="course.status">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Enrolled Students</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">IsApprovedByAdmin</th>
+                        <th scope="col">IsCourseApprovedByAdmin</th>
+                        <th scope="col">IsReportCardGenerated</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let student of students">
+                    <tr>
+                        <th scope="row">{{student.id}}</th>
+                        <td>{{student.name}}</td>
+                        <td>{{student.emailId}}</td>
+                        <td>{{student.approvedByAdmin}}</td>
+                        <td>{{student.coursesApprovedByAdmin}}</td>
+                        <td>{{student.reportCardGenerated}}</td>
+                        <td>
+                            <button class="btn btn-outline-primary">
+                                <a routerLink="/add-grade/{{student.id}}/{{course.id}}">
+                                    add grade
+                                </a>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
