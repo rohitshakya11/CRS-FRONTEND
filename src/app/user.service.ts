@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Student } from './Student';
+import { Student } from './interfaces/Student';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
-import { User } from './User';
-import { Professor } from './Professor';
-import { Admin } from './Admin';
+import { User } from './interfaces/User';
+import { Professor } from './interfaces/Professor';
+import { Admin } from './interfaces/Admin';
 
 @Injectable({
   providedIn: 'root'

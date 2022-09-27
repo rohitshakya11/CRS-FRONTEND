@@ -25,6 +25,9 @@ import { RegisterCourseComponent } from './register-course/register-course.compo
 import { EnrolledStudentsComponent } from './enrolled-students/enrolled-students.component';
 import { AddGradeComponent } from './add-grade/add-grade.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfessorProfileComponent } from './components/professor-profile/professor-profile.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
     RegisterCourseComponent,
     EnrolledStudentsComponent,
     AddGradeComponent,
-    StudentDetailComponent
+    StudentDetailComponent,
+    ProfileComponent,
+    ProfessorProfileComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,

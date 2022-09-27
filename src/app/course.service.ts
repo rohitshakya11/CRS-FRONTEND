@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Course } from './course';
-import { COURSES } from './course-list';
+import { Course } from './interfaces/course';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Grade } from './Grade';
-import { Student } from './Student';
+import { Grade } from './interfaces/Grade';
+import { Student } from './interfaces/Student';
 
 @Injectable({
   providedIn: 'root'

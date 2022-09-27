@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Course } from '../course';
+import { Course } from '../interfaces/course';
 import { CourseService } from '../course.service';
-import { Student } from '../Student';
+import { Student } from '../interfaces/Student';
 
 @Component({
   selector: 'app-enrolled-students',

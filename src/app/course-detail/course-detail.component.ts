@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Course } from '../course';
+import { Course } from '../interfaces/course';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';

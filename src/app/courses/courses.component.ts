@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../course.service';
-import {Course} from '../course';
+import {Course} from '../interfaces/course';
 import { MessageService } from '../message.service';
 
 @Component({

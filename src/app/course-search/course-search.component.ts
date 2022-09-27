@@ -6,7 +6,7 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-import { Course } from '../course';
+import { Course } from '../interfaces/course';
 import { CourseService } from '../course.service';
 
 @Component({

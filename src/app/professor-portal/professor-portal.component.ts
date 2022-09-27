@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from '../course';
+import { Course } from '../interfaces/course';
 import { CourseService } from '../course.service';
-import { Professor } from '../Professor';
-import { Student } from '../Student';
+import { Professor } from '../interfaces/Professor';
+import { Student } from '../interfaces/Student';
 import { UserService } from '../user.service';
 
 @Component({

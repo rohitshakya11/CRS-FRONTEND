@@ -20,6 +20,9 @@ import { AddGradeComponent } from './add-grade/add-grade.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 
 import { AuthGuard } from './guards/auth.guard';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ProfessorProfileComponent } from './components/professor-profile/professor-profile.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 
 const routes: Routes = [
   { path: 'student-detail/:userEmail', component: StudentDetailComponent },
@@ -36,7 +39,10 @@ const routes: Routes = [
   { path: 'professors', component: ProfessorsComponent },
   { path: 'dashboard', component: DashboardComponent , canActivate : [AuthGuard]},
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'detail/:id', component: CourseDetailComponent }
+  { path: 'detail/:id', component: CourseDetailComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'professor-profile', component: ProfessorProfileComponent },
+  { path: 'admin-profile', component: AdminProfileComponent }
 ];
 
 @NgModule({
