@@ -1,0 +1,137 @@
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Course List</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label for="selectedSemesterId" class="form-label">Semester</label>
+            <select class="form-select" aria-label="Default select example" id="selectedSemesterId"
+                [(ngModel)]="selectedSemesterId" (change)="getCoursesBySemesterId()">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Professor</th>
+                        <th scope="col">Fee</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let course of courses">
+                    <tr>
+                        <th scope="row">{{course.id}}</th>
+                        <td>{{course.courseName}}</td>
+                        <td>{{course.professorId}}</td>
+                        <td>{{course.courseFee}}</td>
+                        <td>
+                            <button class="btn btn-outline-primary">
+                                <a routerLink="/register-course/{{student.id}}/{{course.id}}">
+                                    Register
+                                </a>
+                            </button>
+
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Registered Courses</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">IsCoursePrimary</th>
+                        <th scope="col">IsApprovedByAdmin</th>
+                        <th scope="col">grade</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let grade of grades">
+                    <tr>
+                        <th scope="row">{{grade.course.id}}</th>
+                        <td>{{grade.course.courseName}}</td>
+                        <td>{{grade.isCoursePrimary}}</td>
+                        <td>{{grade.isApprovedByAdmin}}</td>
+                        <td>{{grade.grade}}</td>
+                        <td>
+                            <button class="btn btn-outline-primary">
+                                <a routerLink="/register-course/{{student.id}}/{{grade.course.id}}">
+                                    Deregister
+                                </a>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Payments</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Payment Mode</th>
+                        <th scope="col">Payment Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let payment of payments">
+                    <tr>
+                        <th scope="row">{{payment.paymentId}}</th>
+                        <td>{{payment.amount}}</td>
+                        <td>{{payment.paymentMethod}}</td>
+                        <td>{{payment.paymentStatus}}</td>
+                        <td>
+                            <button class="btn btn-outline-primary">
+                                <a routerLink="/make-payment/{{student.id}}/{{payment.paymentId}}/{{payment.amount}}">
+                                    Pay
+                                </a>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

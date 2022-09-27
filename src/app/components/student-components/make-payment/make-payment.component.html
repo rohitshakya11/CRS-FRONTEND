@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 mx-auto">
+            <div class="row">
+                <div class="col text-center">
+                    <h2>Make Payment</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="studentId" class="form-label">studentId</label>
+                        <input type="number" class="form-control" id="studentId" [(ngModel)]="studentId" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">Amount</label>
+                        <input type="number" class="form-control" id="amount" [(ngModel)]="amount" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="paymentMethod" class="form-label">Payment Method</label>
+                        <select class="form-select" aria-label="Default select example" id="paymentMethod"
+                            [(ngModel)]="selectedPaymentMethod">
+                            <option selected value="UPI">UPI</option>
+                            <option value="debit card">debit card</option>
+                            <option value="credit card">credit card</option>
+                            <option value="net banking">net banking</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button type="button" class="btn btn-primary" (click)="makePayment()">Pay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
