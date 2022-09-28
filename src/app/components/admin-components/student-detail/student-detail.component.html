@@ -21,36 +21,30 @@
                                 [(ngModel)]="student.name">
                         </div>
                     </div>
-                    <!-- <div class="row mt-3">
-                        <div class="col-3">
-                            <label for="professorId" class="form-label">Professor ID</label>
-                            <input type="number" class="form-control" id="professorId"
-                                [(ngModel)]="course.professorId">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="form-check">
+                                <label class="form-check-label" for="billGenerated">billGenerated</label>
+                                <input type="checkbox" class="form-check-input" id="billGenerated"
+                                    [(ngModel)]="student.billGenerated">
+                            </div>
                         </div>
-                        <div class="col-9">
-                            <label for="courseFee" class="form-label">Course Fee</label>
-                            <input type="number" class="form-control" id="courseFee"
-                                [(ngModel)]="course.courseFee">
-                        </div>
-                    </div> -->
-                    <!-- <div class="row mt-3">
-                        <div class="col-3">
-                            <label for="semesterId" class="form-label">Semester ID</label>
-                            <input type="number" class="form-control" id="semesterId"
-                                [(ngModel)]="course.semesterId">
-                        </div>
-                        <div class="col-9">
-                            <label for="department" class="form-label">Department</label>
-                            <input type="text" class="form-control" id="department"
-                                [(ngModel)]="course.department">
-                        </div>
-                    </div> -->
+                    </div>
                     <div class="row mt-3">
                         <div class="col">
                             <div class="form-check">
                                 <label class="form-check-label" for="isApprovedByAdmin">isApprovedByAdmin</label>
                                 <input type="checkbox" class="form-check-input" id="isApprovedByAdmin"
                                     [(ngModel)]="student.approvedByAdmin" (change)="approveStudentRegistration()">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="form-check">
+                                <label class="form-check-label" for="isCourseApprovedByAdmin">isCourseApprovedByAdmin</label>
+                                <input type="checkbox" class="form-check-input" id="isCourseApprovedByAdmin"
+                                    [(ngModel)]="student.coursesApprovedByAdmin" (change)="approveStudentCourseRegistration()">
                             </div>
                         </div>
                     </div>
@@ -67,7 +61,7 @@
                         <div class="col">
                             <div class="form-check">
                                 <label class="form-check-label" for="paymentStatus">paymentStatus</label>
-                                <input type="checkbox" class="form-check-input" id="paymentStatus">
+                                <input type="checkbox" class="form-check-input" id="paymentStatus" [(ngModel)]="student.paymentStatus">
                             </div>
                         </div>
                     </div>
@@ -75,12 +69,7 @@
                         <div class="col-4">
                             <input type="button" class="btn btn-primary btn-block" value="generateBill" (click)="generateBill()">
                         </div>
-                        <!-- <div class="col-4">
-                            <input type="button" class="btn btn-success btn-block" value="approveStudentRegistration" (click)="approveStudentRegistration()">
-                        </div>
-                        <div class="col-4">
-                            <input type="button" class="btn btn-danger btn-block" value="generateReportCard" (click)="generateReportCard()">
-                        </div> -->
+                        
                     </div>
                 </div>
             </div>

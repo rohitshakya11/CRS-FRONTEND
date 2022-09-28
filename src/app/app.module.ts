@@ -30,6 +30,7 @@ import { ProfessorProfileComponent } from './components/professor-components/pro
 import { AdminProfileComponent } from './components/admin-components/admin-profile/admin-profile.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MakePaymentComponent } from './components/student-components/make-payment/make-payment.component';
+import { GenerateReportCardComponent } from './components/student-components/generate-report-card/generate-report-card.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { MakePaymentComponent } from './components/student-components/make-payme
     ProfessorProfileComponent,
     AdminProfileComponent,
     FooterComponent,
-    MakePaymentComponent
+    MakePaymentComponent,
+    GenerateReportCardComponent
   ],
   imports: [
     BrowserModule,

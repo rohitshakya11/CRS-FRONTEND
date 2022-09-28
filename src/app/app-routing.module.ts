@@ -24,6 +24,7 @@ import { ProfileComponent } from './components/student-components/profile/profil
 import { ProfessorProfileComponent } from './components/professor-components/professor-profile/professor-profile.component';
 import { AdminProfileComponent } from './components/admin-components/admin-profile/admin-profile.component';
 import { MakePaymentComponent } from './components/student-components/make-payment/make-payment.component';
+import { GenerateReportCardComponent } from './components/student-components/generate-report-card/generate-report-card.component';
 
 const routes: Routes = [
   { path: 'student-detail/:userEmail', component: StudentDetailComponent },
@@ -44,7 +45,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'professor-profile', component: ProfessorProfileComponent },
   { path: 'admin-profile', component: AdminProfileComponent },
-  { path: 'make-payment/:studentId/:paymentId/:amount', component: MakePaymentComponent }
+  { path: 'make-payment/:studentId/:paymentId/:amount', component: MakePaymentComponent },
+  { path: 'generate-report-card', component: GenerateReportCardComponent }
 ];
 
 @NgModule({

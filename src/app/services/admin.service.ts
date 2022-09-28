@@ -25,6 +25,14 @@ export class AdminService {
   }
 
   /** PUT: update the hero on the server */
+  approveStudentCourseRegistration(studentId: number): Observable<Student> {
+    return this.http.put<Student>(`http://localhost:8090/approveStudentCourseRegistration/${studentId}`, null, this.httpOptions).pipe(
+      tap(student => this.log(`course registration approved for student id=${student.id}`)),
+      catchError(this.handleError<Student>('approvedStudentCourseRegistration', undefined))
+    );
+  }
+
+  /** PUT: update the hero on the server */
   generateReportCard(studentId: number): Observable<Student> {
     return this.http.put<Student>(`http://localhost:8090/generateReportCard/${studentId}`, null, this.httpOptions).pipe(
       tap(student => this.log(`generate report card for student id=${student.id}`)),

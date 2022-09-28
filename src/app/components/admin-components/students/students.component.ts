@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Student} from '../../../interfaces/Student';
+import { Student } from '../../../interfaces/Student';
 import { StudentService } from '../../../services/student.service';
 import { MessageService } from '../../../services/message.service';
 
@@ -22,11 +22,9 @@ export class StudentsComponent implements OnInit {
 
   getStudents(): void {
     this.studentService.getStudents()
-      .subscribe((students) => 
-      { console.log("students: ", students);
+      .subscribe((students) => {
         this.students = students;
-       }
-      );
+      });
   }
 
 }

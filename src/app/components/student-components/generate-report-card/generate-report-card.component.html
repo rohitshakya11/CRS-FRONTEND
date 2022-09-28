@@ -1,0 +1,107 @@
+<div id="invoice" #invoice>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h2>Report Card</h2>
+                <hr>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col text-center">
+                                <h2>Your Profile</h2>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="userName" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="userName" [(ngModel)]="student.name"
+                                        readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="userEmail" [(ngModel)]="student.emailId"
+                                        readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="text" class="form-control" id="password" [(ngModel)]="student.password"
+                                        readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="role" class="form-label">Role</label>
+                                    <input type="text" class="form-control" id="role" [(ngModel)]="student.role" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <h2>Registered Courses</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">IsCoursePrimary</th>
+                            <th scope="col">grade</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let grade of grades">
+                        <tr>
+                            <td>{{grade.course.id}}</td>
+                            <td>{{grade.course.courseName}}</td>
+                            <td>{{grade.isCoursePrimary}}</td>
+                            <td>{{grade.grade}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4 mx-auto">
+            <div class="mb-3">
+                <label for="selectedSemesterId" class="form-label">Semester</label>
+                <select class="form-select" aria-label="Default select example" id="selectedSemesterId"
+                    [(ngModel)]="selectedSemesterId" (change)="getCoursesBySemesterId()">
+                    <option selected value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+            <div class="mb-3 text-center">
+                <button class="btn btn-primary" (click)="generatePDF()">Generate Report Card</button>
+            </div>
+        </div>
+    </div>
+</div>

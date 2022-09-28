@@ -10,4 +10,5 @@ export interface Student {
     reportCardGenerated: boolean;
     role: string;
     paymentStatus: boolean;
+    billGenerated: boolean;
 }

@@ -27,6 +27,7 @@ export class StudentDetailComponent implements OnInit {
     this.userService.getStudentByEmail(this.userEmail)
       .subscribe((student) => {
         this.student = student;
+        console.log(".........................", student);
       });
   }
 
@@ -48,6 +49,23 @@ export class StudentDetailComponent implements OnInit {
     }
     else{
       alert("can not dis-approve student registration!");
+    }
+  }
+
+  approveStudentCourseRegistration(): void {
+    if(this.student.coursesApprovedByAdmin==true){
+      this.adminService.approveStudentCourseRegistration(this.student.id)
+      .subscribe((student) => {
+        if (student != undefined) {
+          alert("student course registration approved successfully!");
+        }
+        else {
+          alert("some error occured!");
+        }
+      });
+    }
+    else{
+      alert("can not dis-approve student course registration!");
     }
   }
 
@@ -74,6 +92,18 @@ export class StudentDetailComponent implements OnInit {
         }
       });
     }
+
+    // if(this.student.billGenerated==true){
+    //   this.adminService.generateBill(this.student.id)
+    //   .subscribe((amount) => {
+    //     if(amount!=-1){
+    //       alert("bill generated successfully!");
+    //     }
+    //   });
+    // }
+    // else{
+    //   alert("some error occured!");
+    // }
   }
 
   delete(): void {
